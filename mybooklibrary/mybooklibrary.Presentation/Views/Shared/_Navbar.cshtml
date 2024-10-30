@@ -1,25 +1,62 @@
-<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-    <div class="container-fluid">
-        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">mybooklibrary.Presentation</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-            <ul class="navbar-nav flex-grow-1">
+  <div class="navbar bg-danger navbar-dark navbar-expand-sm">
+        <div class="container">
+            <a href="/" class="navbar-brand">Shopapp</a>
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a href="/products" class="nav-link">Products</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Book">Books</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Cart">Cart</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
-                </li>
+
+                @if(User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item">
+                        <a href="/cart" class="nav-link">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">Orders</a>
+                    </li>                        
+
+                    if(User.IsInRole("admin"))
+                    {
+                         <li class="nav-item">
+                        <a href="/admin/products" class="nav-link">Admin Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/categories" class="nav-link">Admin Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/role/list" class="nav-link">Roles</a>
+                        </li>
+                         <li class="nav-item">
+                            <a href="/admin/user/list" class="nav-link">Users</a>
+                        </li>
+                    }                      
+                }
             </ul>
+
+             <ul class="navbar-nav ml-auto">
+
+                @if(User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item">
+                        <a href="/account/manage" class="nav-link">
+                            @User.Identity.Name
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/account/logout" class="nav-link">Logout</a>
+                    </li>
+                }
+                else
+                {                    
+                    <li class="nav-item">
+                        <a href="/account/login" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/account/register" class="nav-link">Register</a>
+                    </li>    
+                }
+            </ul>
+
+
         </div>
     </div>
-</nav>
