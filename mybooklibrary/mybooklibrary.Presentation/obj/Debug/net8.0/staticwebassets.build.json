@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EPA51u32UEs5bXGWY8vUMmpmXxq38haF2VgUXO3lpQs=",
+  "Hash": "l9nW52ek31hX59ytmiFbeZkdC7jNJE94nF3cug3nEjI=",
   "Source": "mybooklibrary.Presentation",
   "BasePath": "_content/mybooklibrary.Presentation",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\favicon-32x32.png",
+      "SourceId": "mybooklibrary.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\",
+      "BasePath": "_content/mybooklibrary.Presentation",
+      "RelativePath": "favicon-32x32.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon-32x32.png"
     },
     {
       "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\favicon.ico",

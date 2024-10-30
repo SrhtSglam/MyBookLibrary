@@ -1,0 +1,22 @@
+<h1 class="h1">My Account</h1>
+<hr>
+
+<div class="container profile-container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="username">@User.Identity.Name</div>
+            <div class="password">**********</div>
+            <div class="password">Giriş Yapıldımı?: @User.Identity.IsAuthenticated</div>
+            <div class="password">Giriş Tipi: @User.Identity.AuthenticationType</div>
+        </div>
+        <div class="col-md-4 text-right">
+            <img src="~/img/pp.jpg" alt="Profil Fotoğrafı" class="profile-photo">
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <button class="btn btn-primary">Şifre Değiştirme</button>
+        <button class="btn btn-danger">Hesabımı Sil</button>
+        <button class="btn btn-secondary">Destek</button>
+    </div>
+</div>

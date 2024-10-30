@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\favicon-32x32.png"
+    },
+    {
       "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

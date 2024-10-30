@@ -228,5 +228,9 @@ namespace mybooklibrary.Presentation.Controllers
         {
             return View();
         }
+
+        public IActionResult Manage(){
+            return View();
+        }
     }
 }

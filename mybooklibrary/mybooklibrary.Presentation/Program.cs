@@ -113,6 +113,12 @@ app.MapControllerRoute(
 );
 
 app.MapControllerRoute(
+    name: "accountmanage",
+    pattern: "account/manage",
+    defaults: new { controller = "Account", action = "Manage" }
+);
+
+app.MapControllerRoute(
     name: "adminuseredit",
     pattern: "admin/user/{id?}",
     defaults: new { controller = "Admin", action = "UserEdit" }
