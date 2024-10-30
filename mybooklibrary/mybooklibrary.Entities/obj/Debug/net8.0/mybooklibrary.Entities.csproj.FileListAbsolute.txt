@@ -9,3 +9,4 @@ C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Entit
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Entities\obj\Debug\net8.0\refint\mybooklibrary.Entities.dll
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Entities\obj\Debug\net8.0\mybooklibrary.Entities.pdb
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Entities\obj\Debug\net8.0\ref\mybooklibrary.Entities.dll
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Entities\obj\Debug\net8.0\mybooklibrary.Entities.sourcelink.json
