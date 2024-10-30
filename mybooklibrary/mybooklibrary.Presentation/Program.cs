@@ -93,10 +93,6 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseRouting();
-app.UseAuthentication();
-app.UseAuthorization();
-
 // Static file options for node_modules
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -105,10 +101,106 @@ app.UseStaticFiles(new StaticFileOptions
     RequestPath = "/modules"
 });
 
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+
 // Define routes
 app.MapControllerRoute(
+    name: "cart",
+    pattern: "cart",
+    defaults: new { controller = "Cart", action = "Index" }
+);
+
+app.MapControllerRoute(
+    name: "adminuseredit",
+    pattern: "admin/user/{id?}",
+    defaults: new { controller = "Admin", action = "UserEdit" }
+);
+
+app.MapControllerRoute(
+    name: "adminusers",
+    pattern: "admin/user/list",
+    defaults: new { controller = "Admin", action = "UserList" }
+);
+
+app.MapControllerRoute(
+    name: "adminroles",
+    pattern: "admin/role/list",
+    defaults: new { controller = "Admin", action = "RoleList" }
+);
+
+app.MapControllerRoute(
+    name: "adminrolecreate",
+    pattern: "admin/role/create",
+    defaults: new { controller = "Admin", action = "RoleCreate" }
+);
+
+app.MapControllerRoute(
+    name: "adminroleedit",
+    pattern: "admin/role/{id?}",
+    defaults: new { controller = "Admin", action = "RoleEdit" }
+);
+
+app.MapControllerRoute(
+    name: "adminproducts",
+    pattern: "admin/products",
+    defaults: new { controller = "Admin", action = "ProductList" }
+);
+
+app.MapControllerRoute(
+    name: "adminproductcreate",
+    pattern: "admin/products/create",
+    defaults: new { controller = "Admin", action = "ProductCreate" }
+);
+
+app.MapControllerRoute(
+    name: "adminproductedit",
+    pattern: "admin/products/{id?}",
+    defaults: new { controller = "Admin", action = "ProductEdit" }
+);
+
+app.MapControllerRoute(
+    name: "admincategories",
+    pattern: "admin/categories",
+    defaults: new { controller = "Admin", action = "CategoryList" }
+);
+
+app.MapControllerRoute(
+    name: "admincategorycreate",
+    pattern: "admin/categories/create",
+    defaults: new { controller = "Admin", action = "CategoryCreate" }
+);
+
+app.MapControllerRoute(
+    name: "admincategoryedit",
+    pattern: "admin/categories/{id?}",
+    defaults: new { controller = "Admin", action = "CategoryEdit" }
+);
+
+// localhost/search
+app.MapControllerRoute(
+    name: "search",
+    pattern: "search",
+    defaults: new { controller = "Shop", action = "search" }
+);
+
+app.MapControllerRoute(
+    name: "productdetails",
+    pattern: "{url}",
+    defaults: new { controller = "Shop", action = "details" }
+);
+
+app.MapControllerRoute(
+    name: "products",
+    pattern: "products/{category?}",
+    defaults: new { controller = "Shop", action = "list" }
+);
+
+app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
 // Seed identity data
 using (var scope = app.Services.CreateScope())

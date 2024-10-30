@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iiANvvpdxw0=",
+  "dgSpecHash": "uOUhUhem7Lw=",
   "success": true,
   "projectFilePath": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\mybooklibrary.Presentation.csproj",
   "expectedPackageFiles": [
@@ -98,7 +98,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Newtonsoft.Json' 12.0.3 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "message": "'Newtonsoft.Json' 12.0.3 paketinde önem derecesi yüksek olan bilinen bir https://github.com/advisories/GHSA-5crp-9r3c-p9vr güvenlik açığı var",
       "libraryId": "Newtonsoft.Json",
       "targetGraphs": [
         "net8.0"

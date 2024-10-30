@@ -29,7 +29,7 @@ namespace mybooklibrary.Presentation.Controllers
         {
             return View(new LoginModel()
             {
-                ReturnUrl = ReturnUrl
+                ReturnUrl = "Register"
             });
         }
 

@@ -30,5 +30,19 @@ namespace mybooklibrary.Data.Concrete.EfCore
         }
 
 
+        public Category GetByIdWithProducts()
+        {
+            using(var context = new ShopContext())
+            {
+                return context.Categories
+                            .Where(i=>i.CategoryId!=0)
+                            .Include(i=>i.ProductCategories)
+                            .ThenInclude(i=>i.Product)
+                            .FirstOrDefault();
+            }
+        }
+
+
+
     }
 }

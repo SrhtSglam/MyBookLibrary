@@ -4584,6 +4584,7 @@
     "net8.0": [
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0",
+      "Microsoft.EntityFrameworkcore.Sqlite >= 8.0.10",
       "Newtonsoft.Json >= 12.0.3",
       "mybooklibrary.Business >= 1.0.0",
       "mybooklibrary.Data >= 1.0.0",
@@ -4652,6 +4653,10 @@
             "target": "Package",
             "version": "[8.0.0, )"
           },
+          "Microsoft.EntityFrameworkcore.Sqlite": {
+            "target": "Package",
+            "version": "[8.0.10, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.3, )"
@@ -4685,7 +4690,7 @@
       "code": "NU1903",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Newtonsoft.Json' 12.0.3 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "message": "'Newtonsoft.Json' 12.0.3 paketinde önem derecesi yüksek olan bilinen bir https://github.com/advisories/GHSA-5crp-9r3c-p9vr güvenlik açığı var",
       "libraryId": "Newtonsoft.Json",
       "targetGraphs": [
         "net8.0"
