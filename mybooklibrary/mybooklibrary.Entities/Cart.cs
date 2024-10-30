@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace mybooklibrary.entity
+namespace mybooklibrary.Entities
 {
     public class Cart
     {

@@ -3,13 +3,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using shopapp.business.Abstract;
-using shopapp.webui.EmailServices;
-using shopapp.webui.Extensions;
-using shopapp.webui.Identity;
-using shopapp.webui.Models;
+using mybooklibrary.Business.Abstract;
+using mybooklibrary.Presentation.EmailServices;
+using mybooklibrary.Presentation.Extensions;
+using mybooklibrary.Presentation.Identity;
+using mybooklibrary.Presentation.Models;
 
-namespace shopapp.webui.Controllers
+namespace mybooklibrary.Presentation.Controllers
 {
     [AutoValidateAntiforgeryToken]
     public class AccountController:Controller

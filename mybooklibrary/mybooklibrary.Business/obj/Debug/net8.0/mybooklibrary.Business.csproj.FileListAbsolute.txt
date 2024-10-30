@@ -9,3 +9,10 @@ C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Busin
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Business\obj\Debug\net8.0\refint\mybooklibrary.Business.dll
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Business\obj\Debug\net8.0\mybooklibrary.Business.pdb
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Business\obj\Debug\net8.0\ref\mybooklibrary.Business.dll
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Business\bin\Debug\net8.0\mybooklibrary.Data.dll
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Business\bin\Debug\net8.0\mybooklibrary.Entities.dll
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Business\bin\Debug\net8.0\mybooklibrary.Entities.pdb
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Business\bin\Debug\net8.0\mybooklibrary.Data.pdb
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Business\obj\Debug\net8.0\mybooklibrary.Business.csproj.AssemblyReference.cache
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Business\obj\Debug\net8.0\mybooklibrary.Business.sourcelink.json
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Business\obj\Debug\net8.0\mybookli.1563F4A0.Up2Date
