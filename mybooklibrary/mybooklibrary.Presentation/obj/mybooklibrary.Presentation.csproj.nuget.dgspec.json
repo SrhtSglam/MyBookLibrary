@@ -25,7 +25,14 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Data\\mybooklibrary.Data.csproj": {
+                "projectPath": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Data\\mybooklibrary.Data.csproj"
+              },
+              "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Entities\\mybooklibrary.Entities.csproj": {
+                "projectPath": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Entities\\mybooklibrary.Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

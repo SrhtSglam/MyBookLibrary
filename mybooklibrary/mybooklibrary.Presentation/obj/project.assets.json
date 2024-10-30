@@ -5,6 +5,10 @@
       "mybooklibrary.Business/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "mybooklibrary.Data": "1.0.0",
+          "mybooklibrary.Entities": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/mybooklibrary.Business.dll": {}
         },
