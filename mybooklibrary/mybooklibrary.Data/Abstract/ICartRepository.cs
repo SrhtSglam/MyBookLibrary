@@ -1,6 +1,6 @@
-using shopapp.entity;
+using mybooklibrary.Entities;
 
-namespace shopapp.data.Abstract
+namespace mybooklibrary.Data.Abstract
 {
     public interface ICartRepository: IRepository<Cart>
     {

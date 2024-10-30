@@ -1,8 +1,8 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using shopapp.entity;
+using mybooklibrary.Entities;
 
-namespace shopapp.data.Concrete.EfCore
+namespace mybooklibrary.Data.Concrete.EfCore
 {
     public static class SeedDatabase
     {

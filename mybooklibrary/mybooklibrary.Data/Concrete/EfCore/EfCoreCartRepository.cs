@@ -1,9 +1,9 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using shopapp.data.Abstract;
-using shopapp.entity;
+using mybooklibrary.Data.Abstract;
+using mybooklibrary.Entities;
 
-namespace shopapp.data.Concrete.EfCore
+namespace mybooklibrary.Data.Concrete.EfCore
 {
     public class EfCoreCartRepository : EfCoreGenericRepository<Cart, ShopContext>, ICartRepository
     {

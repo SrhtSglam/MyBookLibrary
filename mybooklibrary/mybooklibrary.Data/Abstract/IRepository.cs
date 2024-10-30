@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace shopapp.data.Abstract
+namespace mybooklibrary.Data.Abstract
 {
     public interface IRepository<T>
     {

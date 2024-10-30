@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using shopapp.entity;
+using mybooklibrary.Entities;
 
-namespace shopapp.data.Abstract
+namespace mybooklibrary.Data.Abstract
 {
     public interface IProductRepository: IRepository<Product>
     {

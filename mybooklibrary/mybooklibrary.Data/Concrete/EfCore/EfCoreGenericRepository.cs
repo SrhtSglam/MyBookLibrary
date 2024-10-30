@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using shopapp.data.Abstract;
+using mybooklibrary.Data.Abstract;
 
-namespace shopapp.data.Concrete.EfCore
+namespace mybooklibrary.Data.Concrete.EfCore
 {
     public class EfCoreGenericRepository<TEntity, TContext> : IRepository<TEntity>
         where TEntity : class
