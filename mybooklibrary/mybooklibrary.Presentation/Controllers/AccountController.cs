@@ -8,6 +8,8 @@ using mybooklibrary.Presentation.EmailServices;
 using mybooklibrary.Presentation.Extensions;
 using mybooklibrary.Presentation.Identity;
 using mybooklibrary.Presentation.Models;
+using Microsoft.VisualBasic;
+using System.Text.RegularExpressions;
 
 namespace mybooklibrary.Presentation.Controllers
 {
@@ -87,10 +89,13 @@ namespace mybooklibrary.Presentation.Controllers
                 FirstName  = model.FirstName,
                 LastName = model.LastName,
                 UserName = model.UserName,
-                Email = model.Email    
-            };           
+                Email = model.Email,
+                NormalizedUserName = model.UserName.ToUpper()
+            };
 
             var result = await _userManager.CreateAsync(user,model.Password);
+            var message =  string.Join(", ", result.Errors.Select(x => "Code " + x.Code + " Description" + x.Description));
+            // ModelState.AddModelError("", result.Succeeded.ToString() + message);
             if(result.Succeeded)
             {
                 // generate token
@@ -103,7 +108,10 @@ namespace mybooklibrary.Presentation.Controllers
                 // email
                 await _emailSender.SendEmailAsync(model.Email,"Hesabınızı onaylayınız.",$"Lütfen email hesabınızı onaylamak için linke <a href='https://localhost:5001{url}'>tıklayınız.</a>");
                 return RedirectToAction("Login","Account");
-            }           
+            }
+            else{
+                ModelState.AddModelError("", message.ToString());
+            }
 
             ModelState.AddModelError("","Bilinmeyen hata oldu lütfen tekrar deneyiniz.");
             return View(model);

@@ -1,5 +1,6 @@
 using System.Net;
 using System.Net.Mail;
+using System.Runtime.InteropServices.Marshalling;
 using System.Threading.Tasks;
 
 namespace mybooklibrary.Presentation.EmailServices
@@ -21,10 +22,14 @@ namespace mybooklibrary.Presentation.EmailServices
         }
         public Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
             var client = new SmtpClient(this._host,this._port)
             {
                 Credentials = new NetworkCredential(_username,_password),
-                EnableSsl =this._enableSSL
+                EnableSsl =this._enableSSL,
+                
+                
             };
 
             return client.SendMailAsync(

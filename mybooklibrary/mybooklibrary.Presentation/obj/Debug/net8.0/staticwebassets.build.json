@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l9nW52ek31hX59ytmiFbeZkdC7jNJE94nF3cug3nEjI=",
+  "Hash": "Ocj8LUYof4ndW/5GNAaQZGt81wtfhQnE3j8A5dGqCO8=",
   "Source": "mybooklibrary.Presentation",
   "BasePath": "_content/mybooklibrary.Presentation",
   "Mode": "Default",
@@ -433,6 +433,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\indir.png"
+    },
+    {
+      "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\pp.jpg",
+      "SourceId": "mybooklibrary.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\",
+      "BasePath": "_content/mybooklibrary.Presentation",
+      "RelativePath": "img/pp.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\pp.jpg"
     },
     {
       "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\slider1.png",
