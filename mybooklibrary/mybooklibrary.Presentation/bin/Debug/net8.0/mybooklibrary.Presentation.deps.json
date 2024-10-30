@@ -1,0 +1,67 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "mybooklibrary.Presentation/1.0.0": {
+        "dependencies": {
+          "mybooklibrary.Business": "1.0.0",
+          "mybooklibrary.Data": "1.0.0",
+          "mybooklibrary.Entities": "1.0.0"
+        },
+        "runtime": {
+          "mybooklibrary.Presentation.dll": {}
+        }
+      },
+      "mybooklibrary.Business/1.0.0": {
+        "runtime": {
+          "mybooklibrary.Business.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "mybooklibrary.Data/1.0.0": {
+        "runtime": {
+          "mybooklibrary.Data.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "mybooklibrary.Entities/1.0.0": {
+        "runtime": {
+          "mybooklibrary.Entities.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "mybooklibrary.Presentation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "mybooklibrary.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "mybooklibrary.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "mybooklibrary.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "mybooklibrary.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/mybooklibrary.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/mybooklibrary.Business.dll": {}
+        }
+      },
+      "mybooklibrary.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/mybooklibrary.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/mybooklibrary.Data.dll": {}
+        }
+      },
+      "mybooklibrary.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/mybooklibrary.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/mybooklibrary.Entities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "mybooklibrary.Business/1.0.0": {
+      "type": "project",
+      "path": "../mybooklibrary.Business/mybooklibrary.Business.csproj",
+      "msbuildProject": "../mybooklibrary.Business/mybooklibrary.Business.csproj"
+    },
+    "mybooklibrary.Data/1.0.0": {
+      "type": "project",
+      "path": "../mybooklibrary.Data/mybooklibrary.Data.csproj",
+      "msbuildProject": "../mybooklibrary.Data/mybooklibrary.Data.csproj"
+    },
+    "mybooklibrary.Entities/1.0.0": {
+      "type": "project",
+      "path": "../mybooklibrary.Entities/mybooklibrary.Entities.csproj",
+      "msbuildProject": "../mybooklibrary.Entities/mybooklibrary.Entities.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "mybooklibrary.Business >= 1.0.0",
+      "mybooklibrary.Data >= 1.0.0",
+      "mybooklibrary.Entities >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\stj067\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\mybooklibrary.Presentation.csproj",
+      "projectName": "mybooklibrary.Presentation",
+      "projectPath": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\mybooklibrary.Presentation.csproj",
+      "packagesPath": "C:\\Users\\stj067\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\stj067\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Business\\mybooklibrary.Business.csproj": {
+              "projectPath": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Business\\mybooklibrary.Business.csproj"
+            },
+            "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Data\\mybooklibrary.Data.csproj": {
+              "projectPath": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Data\\mybooklibrary.Data.csproj"
+            },
+            "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Entities\\mybooklibrary.Entities.csproj": {
+              "projectPath": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Entities\\mybooklibrary.Entities.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
