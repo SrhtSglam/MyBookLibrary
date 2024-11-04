@@ -126,19 +126,19 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "adminusers",
-    pattern: "admin/user/list",
+    pattern: "admin/userlist",
     defaults: new { controller = "Admin", action = "UserList" }
 );
 
 app.MapControllerRoute(
     name: "adminroles",
-    pattern: "admin/role/list",
+    pattern: "admin/rolelist",
     defaults: new { controller = "Admin", action = "RoleList" }
 );
 
 app.MapControllerRoute(
     name: "adminrolecreate",
-    pattern: "admin/role/create",
+    pattern: "admin/rolecreate",
     defaults: new { controller = "Admin", action = "RoleCreate" }
 );
 

@@ -23,7 +23,7 @@
     <div class="col-md-12">
         <h1 class="h3">User List</h1>
         <hr>
-        <a class="btn btn-primary btn-sm" href="/admin/user/create">Create User</a>
+        <a class="btn btn-primary btn-sm" href="/admin/usercreate">Create User</a>
         <hr>
         <table data-page-length='3' id="myTable" class="table table-bordered mt-3">
             <thead>
@@ -50,7 +50,7 @@
                                 <td>
                                     <a href="/admin/user/@item.Id" class="btn btn-primary btn-sm mr-2">Edit</a>
                                     
-                                    <form action="/admin/user/delete" method="POST" style="display: inline;">
+                                    <form action="/admin/userdelete" method="POST" style="display: inline;">
                                         <input type="hidden" name="UserId" value="@item.Id">
                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                     </form>
