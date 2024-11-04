@@ -17,10 +17,14 @@ using mybooklibrary.Presentation.Identity;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlite("Data Source=shopDb"));
+// builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlite("Data Source=shopDb"));
+builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationContext>()
     .AddDefaultTokenProviders();
+
+System.Net.ServicePointManager.ServerCertificateValidationCallback +=
+    (sender, certificate, chain, sslPolicyErrors) => true;
 
 // Configure Identity options
 builder.Services.Configure<IdentityOptions>(options =>
@@ -81,7 +85,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    SeedDatabase.Seed();
+    // SeedDatabase.Seed();
     app.UseDeveloperExceptionPage();
 }
 else
@@ -110,6 +114,12 @@ app.MapControllerRoute(
     name: "cart",
     pattern: "cart",
     defaults: new { controller = "Cart", action = "Index" }
+);
+
+app.MapControllerRoute(
+    name: "order",
+    pattern: "order",
+    defaults: new { controller = "Order", action = "Index" }
 );
 
 app.MapControllerRoute(
@@ -214,7 +224,7 @@ using (var scope = app.Services.CreateScope())
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var configuration = app.Configuration;
-    SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
+    // SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
 }
 
 app.Run();
