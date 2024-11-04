@@ -31,7 +31,7 @@ namespace mybooklibrary.Presentation.Controllers
                     CartItemId = i.Id,
                     ProductId = i.ProductId,
                     Name = i.Product.Name,
-                    Price = 0,
+                    Price = i.Product.Price.Value,
                     ImageUrl = i.Product.ImageUrl,
                     Quantity = i.Quantity
                 }).ToList()

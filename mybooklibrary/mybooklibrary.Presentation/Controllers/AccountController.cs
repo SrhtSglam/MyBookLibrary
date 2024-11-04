@@ -10,6 +10,7 @@ using mybooklibrary.Presentation.Identity;
 using mybooklibrary.Presentation.Models;
 using Microsoft.VisualBasic;
 using System.Text.RegularExpressions;
+using mybooklibrary.Entities;
 
 namespace mybooklibrary.Presentation.Controllers
 {
@@ -89,9 +90,14 @@ namespace mybooklibrary.Presentation.Controllers
                 FirstName  = model.FirstName,
                 LastName = model.LastName,
                 UserName = model.UserName,
+                // cart = new Cart(){
+                //     UserId = _userManager.GetUserId(User)
+                // },
                 Email = model.Email,
                 NormalizedUserName = model.UserName.ToUpper()
             };
+
+            _cartService.InitializeCart(user.Id); // Bu SMTP sorunu çözülünce silinecek!!!
 
             var result = await _userManager.CreateAsync(user,model.Password);
             var message =  string.Join(", ", result.Errors.Select(x => "Code " + x.Code + " Description" + x.Description));
