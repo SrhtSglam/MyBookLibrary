@@ -19,22 +19,36 @@ namespace mybooklibrary.Presentation.Controllers
             _cartService = cartService;
             _userManager = userManager;
         }
+        // CartModel model = new CartModel();
+
         public IActionResult Index()
         {
             var cart = _cartService.GetCartByUserId(_userManager.GetUserId(User));
+            // model.CartId = 0;
             return View(new CartModel(){
                 CartId = cart.Id,
-                CartItems = cart.CartItems.Select(i=>new CartItemModel()
-                {
+                CartItems = cart.CartItems.Select(i=>new CartItemModel(){
                     CartItemId = i.Id,
                     ProductId = i.ProductId,
                     Name = i.Product.Name,
-                    Price = (double)i.Product.Price,
+                    Price = 0,
                     ImageUrl = i.Product.ImageUrl,
-                    Quantity =i.Quantity
-
+                    Quantity = i.Quantity
                 }).ToList()
             });
+            // return View(new CartModel(){
+            //     CartId = cart.Id,
+            //     CartItems = cart.CartItems.Select(i=>new CartItemModel()
+            //     {
+            //         CartItemId = i.Id,
+            //         ProductId = i.ProductId,
+            //         Name = i.Product.Name,
+            //         Price = 0,
+            //         ImageUrl = i.Product.ImageUrl,
+            //         Quantity =i.Quantity
+
+            //     }).ToList()
+            // });
         } 
 
         [HttpPost]

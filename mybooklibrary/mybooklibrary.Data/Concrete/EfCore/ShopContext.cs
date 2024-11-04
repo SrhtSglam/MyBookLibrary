@@ -7,7 +7,7 @@ namespace mybooklibrary.Data.Concrete.EfCore
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Cart> Cart { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

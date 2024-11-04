@@ -20,7 +20,7 @@ namespace mybooklibrary.Data.Concrete.EfCore
         {
             using(var context=new ShopContext())
             {
-                return context.Carts
+                return context.Cart
                             .Include(i=>i.CartItems)
                             .ThenInclude(i=>i.Product)
                             .FirstOrDefault(i=>i.UserId==userId);
@@ -31,7 +31,7 @@ namespace mybooklibrary.Data.Concrete.EfCore
         {
             using (var context = new ShopContext())
             {
-               context.Carts.Update(entity);
+               context.Cart.Update(entity);
                context.SaveChanges();
             }
         } 
