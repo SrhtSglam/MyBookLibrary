@@ -16,9 +16,12 @@ using mybooklibrary.Presentation.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("Default");
+
 // Add services to the container.
 // builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlite("Data Source=shopDb"));
-builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
+// builder.Services.AddDbContext<ShopContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationContext>()
     .AddDefaultTokenProviders();
@@ -82,10 +85,17 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+// using (var scope = app.Services.CreateScope()){
+//     var DbContext = scope.ServiceProvider.GetRequiredService<ShopContext>();
+//     if(!DbContext.Database.CanConnect()){
+//         throw new NotImplementedException("CANT!");
+//     }
+// }
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    // SeedDatabase.Seed();
+    SeedDatabase.Seed();
     app.UseDeveloperExceptionPage();
 }
 else
@@ -101,7 +111,7 @@ app.UseStaticFiles();
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "node_modules")),
+        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/node_modules")),
     RequestPath = "/modules"
 });
 
@@ -224,7 +234,7 @@ using (var scope = app.Services.CreateScope())
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var configuration = app.Configuration;
-    // SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
+    SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
 }
 
 app.Run();

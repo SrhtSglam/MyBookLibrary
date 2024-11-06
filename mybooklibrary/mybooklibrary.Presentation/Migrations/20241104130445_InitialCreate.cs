@@ -158,6 +158,55 @@ namespace mybooklibrary.Presentation.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Cart",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<string>(type: "varchar(50)", nullable: true),
+                });
+            
+            migrationBuilder.CreateTable(
+                name: "CartItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: true),
+                    CartId = table.Column<int>(type: "int", nullable: true),
+                    Quantity = table.Column<int>(type: "int", nullable: true)
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Categories",
+                columns: table => new
+                {
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "varchar(50)", nullable: true),
+                    Url = table.Column<string>(type: "varchar(50)", nullable: true)
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductCategory",
+                columns: table => new
+                {
+                    CategoryId = table.Column<int>(type: "int", nullable: true),
+                    ProductId = table.Column<int>(type: "int", nullable: true)
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "varchar(50)", nullable: true),
+                    Url = table.Column<string>(type: "varchar(50)", nullable: true),
+                    Price = table.Column<double>(type: "int", nullable: true),
+                    Description = table.Column<string>(type: "varchar(250)", nullable: true),
+                    ImageUrl = table.Column<string>(type: "varchar(50)", nullable: true),
+                    IsApproved = table.Column<bool>(type: "bit", nullable: true),
+                    IsHome = table.Column<bool>(type: "bit", nullable: true),
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -221,6 +270,24 @@ namespace mybooklibrary.Presentation.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+                
+            migrationBuilder.DropTable(
+                name: "Cart");
+
+            migrationBuilder.DropTable(
+                name: "CartItems");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "ProductCategory");
+
+            migrationBuilder.DropTable(
+                name: "Products");
+
+            // migrationBuilder.DropTable(
+            //     name: "AspNetUsers");
         }
     }
 }
