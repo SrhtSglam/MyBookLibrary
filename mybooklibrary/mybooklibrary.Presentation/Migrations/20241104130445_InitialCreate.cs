@@ -207,6 +207,20 @@ namespace mybooklibrary.Presentation.Migrations
                     IsHome = table.Column<bool>(type: "bit", nullable: true),
                 });
 
+            // migrationBuilder.CreateTable(
+            //     name: "Order",
+            //     columns: table => new
+            //     {
+            //         ProductId = table.Column<int>(type: "int", nullable: false),
+            //         Name = table.Column<string>(type: "varchar(50)", nullable: true),
+            //         Url = table.Column<string>(type: "varchar(50)", nullable: true),
+            //         Price = table.Column<double>(type: "int", nullable: true),
+            //         Description = table.Column<string>(type: "varchar(250)", nullable: true),
+            //         ImageUrl = table.Column<string>(type: "varchar(50)", nullable: true),
+            //         IsApproved = table.Column<bool>(type: "bit", nullable: true),
+            //         IsHome = table.Column<bool>(type: "bit", nullable: true),
+            //     });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",

@@ -21,9 +21,11 @@ namespace mybooklibrary.Presentation.Controllers
         private SignInManager<User> _signInManager;
         private IEmailSender _emailSender;
         private ICartService _cartService;
-        public AccountController(ICartService cartService,UserManager<User> userManager,SignInManager<User> signInManager,IEmailSender emailSender)
+        private IOrderService _orderService;
+        public AccountController(ICartService cartService, IOrderService orderService, UserManager<User> userManager,SignInManager<User> signInManager,IEmailSender emailSender)
         {
             _cartService = cartService;
+            _orderService = orderService;
             _userManager=userManager;
             _signInManager=signInManager;
             _emailSender =emailSender;
@@ -98,6 +100,7 @@ namespace mybooklibrary.Presentation.Controllers
             };
 
             _cartService.InitializeCart(user.Id); // Bu SMTP sorunu çözülünce silinecek!!!
+            // _orderService.InitializeOrder(user.Id); // Bu SMTP sorunu çözülünce silinecek!!!
 
             var result = await _userManager.CreateAsync(user,model.Password);
             var message =  string.Join(", ", result.Errors.Select(x => "Code " + x.Code + " Description" + x.Description));

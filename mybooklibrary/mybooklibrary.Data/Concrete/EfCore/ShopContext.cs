@@ -16,6 +16,8 @@ namespace mybooklibrary.Data.Concrete.EfCore
         public DbSet<Cart> Cart { get; set; }
         // public DbSet<Order> Order { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<Orders> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
         
         // private string _configurationString;
 

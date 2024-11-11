@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using mybooklibrary.Entities;
 
 namespace mybooklibrary.Presentation.Models
 {
