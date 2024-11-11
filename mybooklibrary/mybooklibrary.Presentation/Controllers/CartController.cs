@@ -14,11 +14,9 @@ namespace mybooklibrary.Presentation.Controllers
     public class CartController:Controller
     {
         private ICartService _cartService;
-        private IOrderService _orderService;
         private UserManager<User> _userManager;
-        public CartController(ICartService cartService,UserManager<User> userManager, IOrderService orderService)
+        public CartController(ICartService cartService,UserManager<User> userManager)
         {
-            _orderService = orderService;
             _cartService = cartService;
             _userManager = userManager;
         }
@@ -39,19 +37,6 @@ namespace mybooklibrary.Presentation.Controllers
                     Quantity = i.Quantity
                 }).ToList()
             });
-            // return View(new CartModel(){
-            //     CartId = cart.Id,
-            //     CartItems = cart.CartItems.Select(i=>new CartItemModel()
-            //     {
-            //         CartItemId = i.Id,
-            //         ProductId = i.ProductId,
-            //         Name = i.Product.Name,
-            //         Price = 0,
-            //         ImageUrl = i.Product.ImageUrl,
-            //         Quantity =i.Quantity
-
-            //     }).ToList()
-            // });
         } 
 
         [HttpPost]
@@ -70,13 +55,22 @@ namespace mybooklibrary.Presentation.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public IActionResult AddToOrder(int productId,int quantity, double price, DateTime date, double shipmentPrice)
-        {
-            date = DateTime.Now;
-            var userId = _userManager.GetUserId(User);
-            _orderService.AddToOrder(userId,productId,quantity, price, date, shipmentPrice);
-            return RedirectToAction("Index");
-        } 
+        public IActionResult checkout(){
+            var cart = _cartService.GetCartByUserId(_userManager.GetUserId(User));
+            var orderModel = new OrderModel();
+            orderModel.CartModel = new CartModel(){
+                CartId = cart.Id,
+                CartItems = cart.CartItems.Select(i=>new CartItemModel(){
+                    CartItemId = i.Id,
+                    ProductId = i.ProductId,
+                    Name = i.Product.Name,
+                    Price = i.Product.Price.Value,
+                    ImageUrl = i.Product.ImageUrl,
+                    Quantity = i.Quantity
+                }).ToList()
+            };
+
+            return View(orderModel);
+        }
     }
 }

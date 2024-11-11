@@ -90,6 +90,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlckxpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/stj067/Documents/GitHub/MyBookLibrary/mybooklibrary/mybooklibrary.Presentation/Views/Cart/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDaGVja291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/stj067/Documents/GitHub/MyBookLibrary/mybooklibrary/mybooklibrary.Presentation/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -104,10 +108,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/stj067/Documents/GitHub/MyBookLibrary/mybooklibrary/mybooklibrary.Presentation/Views/Home/MyView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeVZpZXcuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/stj067/Documents/GitHub/MyBookLibrary/mybooklibrary/mybooklibrary.Presentation/Views/Order/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/stj067/Documents/GitHub/MyBookLibrary/mybooklibrary/mybooklibrary.Presentation/Views/Product/Create.cshtml]

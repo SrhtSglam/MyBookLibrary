@@ -79,12 +79,9 @@ else{
                 <a href="/" class="btn btn-primary">
                     <i class="fa fa-arrow-circle-left fa-fw"></i> Alışverişe Devam Et
                 </a>
-                <form asp-controller="Cart" asp-action="AddToOrder" method="post">
-                    <input type="hidden" name="productId" value="@Model.CartId">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fa fa-arrow-circle-right fa-fw"></i> Checkout                             
-                    </button>
-                </form>
+                <a href="/checkout" class="btn btn-primary">
+                    <i class="fa fa-arrow-circle-right fa-fw"></i> Checkout
+                </a>
             </div>
         </div>
     </div>

@@ -21,11 +21,9 @@ namespace mybooklibrary.Presentation.Controllers
         private SignInManager<User> _signInManager;
         private IEmailSender _emailSender;
         private ICartService _cartService;
-        private IOrderService _orderService;
-        public AccountController(ICartService cartService, IOrderService orderService, UserManager<User> userManager,SignInManager<User> signInManager,IEmailSender emailSender)
+        public AccountController(ICartService cartService, UserManager<User> userManager,SignInManager<User> signInManager,IEmailSender emailSender)
         {
             _cartService = cartService;
-            _orderService = orderService;
             _userManager=userManager;
             _signInManager=signInManager;
             _emailSender =emailSender;

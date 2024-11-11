@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Formats.Tar;
 using System.Linq;
+using Microsoft.Identity.Client;
 using mybooklibrary.Entities;
 
 namespace mybooklibrary.Presentation.Models
@@ -12,6 +14,10 @@ namespace mybooklibrary.Presentation.Models
         public double TotalPrice()
         {
             return CartItems.Sum(i=>i.Price*i.Quantity);
+        }
+
+        public int GetProductId(){
+            return 2;
         }
     }
 

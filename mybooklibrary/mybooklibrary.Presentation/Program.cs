@@ -1,20 +1,51 @@
 using System;
+using System.Globalization;
 using System.IO;
+using System.Reflection;
+using Azure.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Options;
 using mybooklibrary.Business.Abstract;
 using mybooklibrary.Business.Concrete;
 using mybooklibrary.Data.Abstract;
 using mybooklibrary.Data.Concrete.EfCore;
 using mybooklibrary.Presentation.EmailServices;
 using mybooklibrary.Presentation.Identity;
+using mybooklibrary.Presentation.Services;
+using static mybooklibrary.Presentation.Services.LanguageService;
 
 var builder = WebApplication.CreateBuilder(args);
+
+#region Localizer 
+    builder.Services.AddSingleton<LanguageService>();
+    builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+    builder.Services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(options => 
+        options.DataAnnotationLocalizerProvider = (type, factory) =>{
+            var assemblyName = new AssemblyName(typeof(SharedResource).GetTypeInfo().Assembly.FullName);
+            return factory.Create(nameof(SharedResource), assemblyName.Name);
+        }
+    );
+
+    builder.Services.Configure<RequestLocalizationOptions>(options => {
+        var supportCultures = new List<CultureInfo>(){
+            new CultureInfo("en-US"),
+            new CultureInfo("tr-TR"),
+
+        };
+        options.DefaultRequestCulture = new RequestCulture(culture: "TR-tr", uiCulture: "tr-TR");
+        options.SupportedCultures = supportCultures;
+        options.SupportedUICultures = supportCultures;
+        options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
+    });
+#endregion
+
 
 var connectionString = builder.Configuration.GetConnectionString("Default");
 
@@ -67,12 +98,10 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddScoped<ICategoryRepository, EfCoreCategoryRepository>();
 builder.Services.AddScoped<IProductRepository, EfCoreProductRepository>();
 builder.Services.AddScoped<ICartRepository, EfCoreCartRepository>();
-builder.Services.AddScoped<IOrderRepository, EfCoreOrderRepository>();
 
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICartService, CartManager>();
-builder.Services.AddScoped<IOrderService, OrderManager>();
 
 builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(i =>
     new SmtpEmailSender(
@@ -109,6 +138,8 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
+
 // Static file options for node_modules
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -122,6 +153,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // Define routes
+app.MapControllerRoute(
+    name: "checkout",
+    pattern: "checkout",
+    defaults: new { controller = "Cart", action = "Checkout" }
+);
+
 app.MapControllerRoute(
     name: "cart",
     pattern: "cart",
