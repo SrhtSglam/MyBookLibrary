@@ -1,9 +1,22 @@
+@* @model Category *@
+
   <div class="navbar bg-danger navbar-dark navbar-expand-sm">
         <div class="container">
             <a href="/" class="navbar-brand">MyBookLibrary</a>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="/products/list" class="nav-link">Products</a>
+                    @* <a href="/products/list" class="nav-link">Products</a> *@
+                    <div class="dropdown">
+                        <button href="/products/list" class="btn dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Products
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/products/aksiyon">Aksiyon</a>
+                            <a class="dropdown-item" href="/products/macera">Macera</a>
+                            <a class="dropdown-item" href="/products/tarih">Tarih</a>
+                            <a class="dropdown-item" href="/products/edebi">Edebi</a>
+                        </div>
+                    </div>
                 </li>
 
                 @if(User.Identity.IsAuthenticated)
@@ -11,9 +24,9 @@
                     <li class="nav-item">
                         <a href="/cart" class="nav-link">Cart</a>
                     </li>
-                    <li class="nav-item">
+                    @* <li class="nav-item">
                         <a href="/order" class="nav-link">Orders</a>
-                    </li>                        
+                    </li>                         *@
 
                     if(User.IsInRole("admin"))
                     {

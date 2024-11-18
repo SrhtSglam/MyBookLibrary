@@ -16,7 +16,7 @@ namespace mybooklibrary.Presentation.Models
         [StringLength(100,MinimumLength=5,ErrorMessage="Url için 5-100 arasında değer giriniz.")]        
 
         public string Url { get; set; }
-
+        
         public List<Product> Products { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace mybooklibrary.Presentation.Models
         public double? Price { get; set; } 
       
         [Required(ErrorMessage="Description zorunlu bir alan.")]
-        [StringLength(100,MinimumLength=5,ErrorMessage="Description 5-100 karakter aralığında olmalıdır.")]
+        [StringLength(250,MinimumLength=5,ErrorMessage="Description 5-250 karakter aralığında olmalıdır.")]
 
         public string Description { get; set; }      
        
