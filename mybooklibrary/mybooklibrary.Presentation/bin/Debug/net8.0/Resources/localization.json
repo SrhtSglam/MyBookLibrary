@@ -1,0 +1,10 @@
+{
+    "greeting": {
+      "en-US": "Welcome",
+      "tr-TR": "Hoşgeldiniz"
+    },
+    "contact": {
+      "en-US": "Contact Us",
+      "tr-TR": "Bize Ulaşın"
+    }
+  }

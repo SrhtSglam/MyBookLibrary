@@ -1,0 +1,15 @@
+{
+  "Products": {
+    "en-US": "Productss",
+    "tr-TR": "Ürünler"
+  },
+    "contact": {
+      "en-US": "Contact Us",
+      "tr-TR": "Bize Ulaşın"
+    },
+
+    "DropdownItem1": {
+      "en-US": "Aksiyon",
+      "tr-TR": "Action"
+    }
+  }

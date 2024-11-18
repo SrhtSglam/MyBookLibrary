@@ -33,13 +33,15 @@ var builder = WebApplication.CreateBuilder(args);
         }
     );
 
-    builder.Services.Configure<RequestLocalizationOptions>(options => {
-        var supportCultures = new List<CultureInfo>(){
+    builder.Services.Configure<RequestLocalizationOptions>(options =>
+    {
+        var supportCultures = new List<CultureInfo>
+        {
             new CultureInfo("en-US"),
             new CultureInfo("tr-TR"),
-
         };
-        options.DefaultRequestCulture = new RequestCulture(culture: "TR-tr", uiCulture: "tr-TR");
+
+        options.DefaultRequestCulture = new RequestCulture(culture: "tr-TR", uiCulture: "tr-TR");
         options.SupportedCultures = supportCultures;
         options.SupportedUICultures = supportCultures;
         options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());

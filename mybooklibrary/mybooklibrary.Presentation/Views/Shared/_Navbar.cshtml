@@ -1,3 +1,4 @@
+@using System.Globalization
 @* @model Category *@
 
   <div class="navbar bg-danger navbar-dark navbar-expand-sm">
@@ -8,10 +9,12 @@
                     @* <a href="/products/list" class="nav-link">Products</a> *@
                     <div class="dropdown">
                         <button href="/products/list" class="btn dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Products
+                            @* Products *@
+                            @* @{var currentCulture = CultureInfo.CurrentCulture.Name;} *@
+                            @_localization.GetKey("Products", "tr-TR")
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/products/aksiyon">Aksiyon</a>
+                            <a class="dropdown-item" href="/products/aksiyon">@_localization.GetKey("DropdownItem1", "tr-TR")</a>
                             <a class="dropdown-item" href="/products/macera">Macera</a>
                             <a class="dropdown-item" href="/products/tarih">Tarih</a>
                             <a class="dropdown-item" href="/products/edebi">Edebi</a>

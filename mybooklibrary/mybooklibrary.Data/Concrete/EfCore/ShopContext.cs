@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.VisualBasic;
 using mybooklibrary.Entities;
+using System.Diagnostics;
 
 namespace mybooklibrary.Data.Concrete.EfCore
 {
@@ -46,7 +47,14 @@ namespace mybooklibrary.Data.Concrete.EfCore
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("Default"));
+            var dbtypenum = configuration.GetSection("DatabaseSettings:DbTypeNum").Value;
+            if (dbtypenum == "1")
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("Default"));
+            else if (dbtypenum == "2")
+                optionsBuilder.UseSqlite(configuration.GetConnectionString("Sqlite"));
+            else{
+                Console.WriteLine("Hata");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

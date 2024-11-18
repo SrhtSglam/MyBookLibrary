@@ -177,4 +177,4 @@ C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Prese
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Presentation\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Presentation\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Presentation\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
-C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Presentation\bin\Debug\net8.0\Resources\SharedResource.en-US.json
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Presentation\bin\Debug\net8.0\Resources\localization.json
