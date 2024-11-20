@@ -1,15 +1,8 @@
-using System;
 using System.Globalization;
-using System.IO;
 using System.Reflection;
-using Azure.Core;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Options;
 using mybooklibrary.Business.Abstract;
@@ -23,7 +16,7 @@ using static mybooklibrary.Presentation.Services.LanguageService;
 
 var builder = WebApplication.CreateBuilder(args);
 
-#region Localizer 
+#region Language 
     builder.Services.AddSingleton<LanguageService>();
     builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
     builder.Services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(options => 
@@ -48,13 +41,9 @@ var builder = WebApplication.CreateBuilder(args);
     });
 #endregion
 
-
 var connectionString = builder.Configuration.GetConnectionString("Default");
 
-// Add services to the container.
-// builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlite("Data Source=shopDb"));
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
-// builder.Services.AddDbContext<ShopContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationContext>()
     .AddDefaultTokenProviders();
@@ -118,14 +107,6 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// using (var scope = app.Services.CreateScope()){
-//     var DbContext = scope.ServiceProvider.GetRequiredService<ShopContext>();
-//     if(!DbContext.Database.CanConnect()){
-//         throw new NotImplementedException("CANT!");
-//     }
-// }
-
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     SeedDatabase.Seed();
@@ -137,145 +118,159 @@ else
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseHttpsRedirection();
 app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
 
-// Static file options for node_modules
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new PhysicalFileProvider(
-        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/node_modules")),
-    RequestPath = "/modules"
-});
+#region Static Files (/modules)
+    app.UseStaticFiles(new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider(
+            Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/node_modules")),
+        RequestPath = "/modules"
+    });
+#endregion
 
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Define routes
-app.MapControllerRoute(
-    name: "checkout",
-    pattern: "checkout",
-    defaults: new { controller = "Cart", action = "Checkout" }
-);
+#region Define Routes
+    app.MapControllerRoute(
+        name: "checkout",
+        pattern: "checkout",
+        defaults: new { controller = "Cart", action = "Checkout" }
+    );
 
-app.MapControllerRoute(
-    name: "cart",
-    pattern: "cart",
-    defaults: new { controller = "Cart", action = "Index" }
-);
+    app.MapControllerRoute(
+        name: "cart",
+        pattern: "cart",
+        defaults: new { controller = "Cart", action = "Index" }
+    );
 
-app.MapControllerRoute(
-    name: "order",
-    pattern: "order",
-    defaults: new { controller = "Order", action = "Index" }
-);
+    app.MapControllerRoute(
+        name: "order",
+        pattern: "order",
+        defaults: new { controller = "Order", action = "Index" }
+    );
 
-app.MapControllerRoute(
-    name: "accountmanage",
-    pattern: "account/manage",
-    defaults: new { controller = "Account", action = "Manage" }
-);
+    app.MapControllerRoute(
+        name: "accountmanage",
+        pattern: "account/manage",
+        defaults: new { controller = "Account", action = "Manage" }
+    );
 
-app.MapControllerRoute(
-    name: "adminuseredit",
-    pattern: "admin/user/{id?}",
-    defaults: new { controller = "Admin", action = "UserEdit" }
-);
+    // app.MapControllerRoute(
+    //     name: "adminuseredit",
+    //     pattern: "admin/user/{id?}",
+    //     defaults: new { controller = "Admin", action = "UserEdit" }
+    // );
 
-app.MapControllerRoute(
-    name: "adminusers",
-    pattern: "admin/userlist",
-    defaults: new { controller = "Admin", action = "UserList" }
-);
+    app.MapControllerRoute(
+        name: "adminusers",
+        pattern: "admin/userlist",
+        defaults: new { controller = "Admin", action = "UserList" }
+    );
 
-app.MapControllerRoute(
-    name: "adminroles",
-    pattern: "admin/rolelist",
-    defaults: new { controller = "Admin", action = "RoleList" }
-);
+    // app.MapControllerRoute(
+    //     name: "adminroles",
+    //     pattern: "admin/rolelist",
+    //     defaults: new { controller = "Admin", action = "RoleList" }
+    // );
 
-app.MapControllerRoute(
-    name: "adminrolecreate",
-    pattern: "admin/rolecreate",
-    defaults: new { controller = "Admin", action = "RoleCreate" }
-);
+    // app.MapControllerRoute(
+    //     name: "adminrolecreate",
+    //     pattern: "admin/rolecreate",
+    //     defaults: new { controller = "Admin", action = "RoleCreate" }
+    // );
 
-app.MapControllerRoute(
-    name: "adminroleedit",
-    pattern: "admin/role/{id?}",
-    defaults: new { controller = "Admin", action = "RoleEdit" }
-);
+    // app.MapControllerRoute(
+    //     name: "adminroleedit",
+    //     pattern: "admin/role/{id?}",
+    //     defaults: new { controller = "Admin", action = "RoleEdit" }
+    // );
 
-app.MapControllerRoute(
-    name: "adminproducts",
-    pattern: "admin/products",
-    defaults: new { controller = "Admin", action = "ProductList" }
-);
+    app.MapControllerRoute(
+        name: "adminproducts",
+        pattern: "admin/products",
+        defaults: new { controller = "Admin", action = "ProductList" }
+    );
 
-app.MapControllerRoute(
-    name: "adminproductcreate",
-    pattern: "admin/products/create",
-    defaults: new { controller = "Admin", action = "ProductCreate" }
-);
+    // app.MapControllerRoute(
+    //     name: "adminproductcreate",
+    //     pattern: "admin/products/create",
+    //     defaults: new { controller = "Admin", action = "ProductCreate" }
+    // );
 
-app.MapControllerRoute(
-    name: "adminproductedit",
-    pattern: "admin/products/{id?}",
-    defaults: new { controller = "Admin", action = "ProductEdit" }
-);
+    // app.MapControllerRoute(
+    //     name: "adminproductedit",
+    //     pattern: "admin/products/{id?}",
+    //     defaults: new { controller = "Admin", action = "ProductEdit" }
+    // );
 
-app.MapControllerRoute(
-    name: "admincategories",
-    pattern: "admin/categories",
-    defaults: new { controller = "Admin", action = "CategoryList" }
-);
+    app.MapControllerRoute(
+        name: "admincategories",
+        pattern: "admin/categories",
+        defaults: new { controller = "Admin", action = "CategoryList" }
+    );
 
-app.MapControllerRoute(
-    name: "admincategorycreate",
-    pattern: "admin/categories/create",
-    defaults: new { controller = "Admin", action = "CategoryCreate" }
-);
+    // app.MapControllerRoute(
+    //     name: "admincategorycreate",
+    //     pattern: "admin/categories/create",
+    //     defaults: new { controller = "Admin", action = "CategoryCreate" }
+    // );
 
-app.MapControllerRoute(
-    name: "admincategoryedit",
-    pattern: "admin/categories/{id?}",
-    defaults: new { controller = "Admin", action = "CategoryEdit" }
-);
+    // app.MapControllerRoute(
+    //     name: "admincategoryedit",
+    //     pattern: "admin/categories/{id?}",
+    //     defaults: new { controller = "Admin", action = "CategoryEdit" }
+    // );
 
-// localhost/search
-app.MapControllerRoute(
-    name: "search",
-    pattern: "search",
-    defaults: new { controller = "Shop", action = "search" }
-);
+    app.MapControllerRoute(
+        name: "admindashboard",
+        pattern: "admin/dashboard",
+        defaults: new { controller = "Admin", action = "Dashboard"}
+    );
 
-app.MapControllerRoute(
-    name: "productdetails",
-    pattern: "{url}",
-    defaults: new { controller = "Shop", action = "details" }
-);
+    app.MapControllerRoute(
+        name: "adminwebmanager",
+        pattern: "admin/webmanager",
+        defaults: new { controller = "Admin", action = "WebManager"}
+    );
 
-app.MapControllerRoute(
-    name: "products",
-    pattern: "products/{category?}",
-    defaults: new { controller = "Shop", action = "list" }
-);
+    // localhost/search
+    app.MapControllerRoute(
+        name: "search",
+        pattern: "search",
+        defaults: new { controller = "Shop", action = "search" }
+    );
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}"
-);
+    app.MapControllerRoute(
+        name: "productdetails",
+        pattern: "{url}",
+        defaults: new { controller = "Shop", action = "details" }
+    );
 
-// Seed identity data
-using (var scope = app.Services.CreateScope())
-{
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var configuration = app.Configuration;
-    SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
-}
+    app.MapControllerRoute(
+        name: "products",
+        pattern: "products/{category?}",
+        defaults: new { controller = "Shop", action = "list" }
+    );
+
+    app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}"
+    );
+#endregion
+
+#region SeedIdentity Data
+    using (var scope = app.Services.CreateScope())
+    {
+        var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+        var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        var configuration = app.Configuration;
+        SeedIdentity.Seed(userManager, roleManager, configuration).Wait();
+    }
+#endregion
 
 app.Run();

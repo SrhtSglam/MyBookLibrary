@@ -36,6 +36,9 @@ namespace mybooklibrary.Presentation.Controllers
             _userManager = userManager;
         }
 
+        public IActionResult Dashboard(){
+            return View();
+        }
 
         public async Task<IActionResult> UserEdit(string id)
         {
@@ -449,6 +452,10 @@ namespace mybooklibrary.Presentation.Controllers
         {
             _categoryService.DeleteFromCategory(productId,categoryId);
             return Redirect("/admin/categories/"+categoryId);
+        }
+
+        public IActionResult WebManager(){
+            return View();
         }
     }
 }

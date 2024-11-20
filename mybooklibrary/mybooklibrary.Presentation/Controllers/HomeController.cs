@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using mybooklibrary.Business.Abstract;
 using mybooklibrary.Data.Abstract;
+using mybooklibrary.Entities;
 using mybooklibrary.Presentation.Models;
 using mybooklibrary.Presentation.Services;
 
@@ -14,6 +15,7 @@ namespace mybooklibrary.Presentation.Controllers
     {
         private readonly IProductService _productService;
         private readonly LanguageService _localization;
+        private CarouselSettings carouselSettings;
         public string currentCulture;
 
         public HomeController(IProductService productService, LanguageService localization)
@@ -24,25 +26,32 @@ namespace mybooklibrary.Presentation.Controllers
 
         public IActionResult Index()
         {
-            // CurrentCulture'a göre localized metin al
-            currentCulture = Thread.CurrentThread.CurrentCulture.Name;
-            // ViewBag.Welcome = _localization.GetKey("greeting", currentCulture); //Test kodudur.
-
+            carouselSettings = new CarouselSettings();
+            var CarouselSettings = new CarouselSettings
+            {
+                IsCarousel = true,
+                CarouselHeaderLine = new List<CarouselHeaderLine>(){
+                        new CarouselHeaderLine(){CarouselImageUrl = "wp1.jpg", CarouselHeader = "Header 0", CarouselLine = "Line0"}, //Carousel minimum 1 değer verilmeli, default değer almaz ise patlıyor.
+                        // new CarouselHeaderLine(){CarouselImageUrl = "wp1.jpg", CarouselHeader = "Header 1", CarouselLine = "Line1"},
+                        // new CarouselHeaderLine(){CarouselImageUrl = "wp2.jpg", CarouselHeader = "Header 2", CarouselLine = "Line2"},
+                        // new CarouselHeaderLine(){CarouselImageUrl = "wp1.jpg", CarouselHeader = "Header 3", CarouselLine = "Line3"},
+                        // new CarouselHeaderLine(){CarouselImageUrl = "wp2.jpg", CarouselHeader = "Header 4", CarouselLine = "Line4"},
+                        // new CarouselHeaderLine(){CarouselImageUrl = "wp1.jpg", CarouselHeader = "Header 5", CarouselLine = "Line5"}
+                    }
+            };
             var productViewModel = new ProductListViewModel
             {
                 Products = _productService.GetHomePageProducts()
             };
 
-            return View(productViewModel);
-        }
+            var homemodel = new HomeModel{
+                CarouselSettings = CarouselSettings,
+                ProductListViewModel = productViewModel
+            };
 
-        public IActionResult ChangeLanguage(string culture)
-        {
-            Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
-                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
-                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) });
 
-            return Redirect(Request.Headers["Referer"].ToString());
+
+            return View(homemodel);
         }
 
         public IActionResult About()
@@ -52,7 +61,6 @@ namespace mybooklibrary.Presentation.Controllers
 
         public IActionResult Contact()
         {
-            ViewBag.ContactTitle = _localization.GetKey("contact", Thread.CurrentThread.CurrentCulture.Name);
             return View();
         }
     }

@@ -11,6 +11,7 @@ using mybooklibrary.Presentation.Models;
 using Microsoft.VisualBasic;
 using System.Text.RegularExpressions;
 using mybooklibrary.Entities;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace mybooklibrary.Presentation.Controllers
 {
@@ -32,7 +33,7 @@ namespace mybooklibrary.Presentation.Controllers
         {
             return View(new LoginModel()
             {
-                ReturnUrl = "Register"
+                ReturnUrl = "Manage"
             });
         }
 
@@ -246,6 +247,26 @@ namespace mybooklibrary.Presentation.Controllers
         
         public IActionResult Manage(){
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(string userId){
+            userId = "b2fe3b60-b781-4640-81e4-c1f273a9ee00";
+            var user = await _userManager.FindByIdAsync(userId);
+
+            if(user != null){
+                var result = await _userManager.DeleteAsync(user);
+
+                if(result.Succeeded){
+                    return RedirectToAction("Logout");
+                }
+                else{
+                    foreach (var error in result.Errors){
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
+            }
+            return Redirect("~/");
         }
     }
 }

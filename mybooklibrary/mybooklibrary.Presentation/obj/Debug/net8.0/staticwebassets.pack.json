@@ -85,6 +85,14 @@
       "PackagePath": "staticwebassets\\img\\b9.jpg"
     },
     {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\carousel\\wp1.jpg",
+      "PackagePath": "staticwebassets\\img\\carousel\\wp1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\carousel\\wp2.jpg",
+      "PackagePath": "staticwebassets\\img\\carousel\\wp2.jpg"
+    },
+    {
       "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\indir.png",
       "PackagePath": "staticwebassets\\img\\indir.png"
     },
@@ -105,16 +113,56 @@
       "PackagePath": "staticwebassets\\img\\slider3.png"
     },
     {
-      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\wp1.jpg",
-      "PackagePath": "staticwebassets\\img\\wp1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\wp2.jpg",
-      "PackagePath": "staticwebassets\\img\\wp2.jpg"
-    },
-    {
       "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.css",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.css"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.css.map",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.css.map"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.js",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.js"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.js.map",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.js.map"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.min.css",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.min.css"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.min.js",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.min.js"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\adminlte\\adminlte.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\adminlte\\adminlte.rtl.min.css.map"
     },
     {
       "Id": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\lib\\bootstrap\\LICENSE",

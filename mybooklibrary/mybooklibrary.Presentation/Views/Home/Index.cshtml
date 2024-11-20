@@ -1,4 +1,4 @@
-@model ProductListViewModel
+@model HomeModel
 
 <partial name="_header">
 @* <h1>@_localization.GetKey("greeting", "tr-TR")</h1> *@
@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-9">
         <div class="row">                  
-            @foreach (var product in Model.Products)
+            @foreach (var product in Model.ProductListViewModel.Products)
             {    
                 <div class="col-md-4">
                     @await Html.PartialAsync("_product", product)   

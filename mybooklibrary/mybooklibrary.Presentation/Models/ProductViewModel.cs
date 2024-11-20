@@ -21,5 +21,5 @@ namespace mybooklibrary.Presentation.Models
     {
         public PageInfo PageInfo { get; set; }
         public List<Product> Products { get; set; }
-    }
+    }   
 }

@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-  <None Include="..\mybooklibrary.Presentation\wwwroot\node_modules\**">
+  <None Include="\wwwroot\node_modules\**">
     <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
   </None>
 </ItemGroup>
