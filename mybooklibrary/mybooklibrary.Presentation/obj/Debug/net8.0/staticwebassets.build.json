@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "izMQBY/eBQne6bZRLBGsikvNa1PamWaodz764QbaZO8=",
+  "Hash": "6NNoe6cpZ3twmohWwFQ0lt4b4kpx73cqSp+6p7cF3nQ=",
   "Source": "mybooklibrary.Presentation",
   "BasePath": "_content/mybooklibrary.Presentation",
   "Mode": "Default",
@@ -226,12 +226,12 @@
       "OriginalItemSpec": "wwwroot\\img\\7.jpg"
     },
     {
-      "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\b1.jpg",
+      "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\b1.png",
       "SourceId": "mybooklibrary.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\",
       "BasePath": "_content/mybooklibrary.Presentation",
-      "RelativePath": "img/b1.jpg",
+      "RelativePath": "img/b1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -242,7 +242,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\b1.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\b1.png"
     },
     {
       "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\b10.jpg",
@@ -264,12 +264,12 @@
       "OriginalItemSpec": "wwwroot\\img\\b10.jpg"
     },
     {
-      "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\b2.jpg",
+      "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\b2.png",
       "SourceId": "mybooklibrary.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\",
       "BasePath": "_content/mybooklibrary.Presentation",
-      "RelativePath": "img/b2.jpg",
+      "RelativePath": "img/b2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -280,15 +280,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\b2.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\b2.png"
     },
     {
-      "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\b3.jpg",
+      "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\b3.png",
       "SourceId": "mybooklibrary.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\",
       "BasePath": "_content/mybooklibrary.Presentation",
-      "RelativePath": "img/b3.jpg",
+      "RelativePath": "img/b3.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -299,7 +299,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\b3.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\b3.png"
     },
     {
       "Identity": "C:\\Users\\stj067\\Documents\\GitHub\\MyBookLibrary\\mybooklibrary\\mybooklibrary.Presentation\\wwwroot\\img\\b4.jpg",
