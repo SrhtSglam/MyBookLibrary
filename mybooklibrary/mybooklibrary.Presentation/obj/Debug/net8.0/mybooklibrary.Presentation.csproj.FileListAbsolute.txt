@@ -178,3 +178,6 @@ C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Prese
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Presentation\obj\Debug\net8.0\mybooklibrary.Presentation.pdb
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Presentation\obj\Debug\net8.0\mybooklibrary.Presentation.genruntimeconfig.cache
 C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Presentation\obj\Debug\net8.0\ref\mybooklibrary.Presentation.dll
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Presentation\bin\Debug\net8.0\mybooklibrary.Presentation.staticwebassets.endpoints.json
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Presentation\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\stj067\Documents\GitHub\MyBookLibrary\mybooklibrary\mybooklibrary.Presentation\obj\Debug\net8.0\staticwebassets\msbuild.mybooklibrary.Presentation.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
